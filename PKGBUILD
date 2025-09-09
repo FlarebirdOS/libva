@@ -1,19 +1,22 @@
 pkgname=libva
 pkgver=2.22.0
-pkgrel=1
+pkgrel=2
 pkgdesc="Video Acceleration (VA) API for Linux"
 arch=('x86_64')
 url="https://01.org/linuxmedia/vaapi"
 license=('MIT')
 depends=(
     'libdrm'
-    'libglvnd'
     'libx11'
     'libxext'
     'libxfixes'
+    'mesa'
     'wayland'
 )
-makedepends=('meson')
+makedepends=(
+    'libglvnd'
+    'meson'
+)
 backup=(etc/libva.conf)
 source=(https://github.com/intel/libva/archive/${pkgver}/${pkgname}-${pkgver}.tar.gz)
 sha256sums=(467c418c2640a178c6baad5be2e00d569842123763b80507721ab87eb7af8735)
